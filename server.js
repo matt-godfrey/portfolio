@@ -40,7 +40,8 @@ store.on("error", (err) => { console.log(err) })
 app.use(session({
 	name: "userSession",
 	secret: "A very cool secret",
-	store: store,
+	// store: store,
+	store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
 	resave: true,
 	saveUninitialized: false
 }))
