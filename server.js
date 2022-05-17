@@ -30,11 +30,11 @@ app.set("view engine", "pug");
 app.use(express.json()); // parse JSON in request
 app.use(express.urlencoded({extended: true})); // parses form data
 
-const store = new MongoDBStore({
-	// mongoUrl: "mongodb://localhost/portfolio",
-	mongoUrl: process.env.MONGO_URI,
-	collection: "sessions"
-})
+// const store = new MongoDBStore({
+// 	// mongoUrl: "mongodb://localhost/portfolio",
+// 	mongoUrl: process.env.MONGO_URI,
+// 	collection: "sessions"
+// })
 store.on("error", (err) => { console.log(err) })
 
 app.use(session({
