@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Projects</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/projects.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    </head>
+    <body onload="init()">
+        <div id="nav-bar" class="header">
+            <a href="../register" id="register" class="nav">Register</a>
+            <a href="../login" id="login" class="nav">Login</a>
+            <a href="Resumepdf.pdf" target="_blank" download class="nav">Resume</a>
+            <a href="contact.html" class="nav">Contact</a>
+            <a href="projects.html" class="nav" >Projects</a>
+            <a href="/" class="nav">Home</a>
+        </div>
+        <div class="banner"></div>
+        <h2>Personal Projects</h2>
+        <p>(Hover for quick view)</p>
+        <div id="container">
+            <div id="project-display" class="frame">
+                <iframe id="iframe" src="https://matt-godfrey.github.io/D3HeatMap/" title="project display" class="myFrame"></iframe>
+            </div>
+            <div id="projects">
+                <div id="d3-projects" class="list">
+                    <h4>D3</h4>
+                    <ul>
+                        <li><a class="link" href="https://matt-godfrey.github.io/D3HeatMap/" target="_blank">Heat Map</a></li>
+                        <li><a class="link" href="https://matt-godfrey.github.io/D3ChoroplethMap/" target="_blank">Choropleth Map</a></li>
+                        <li><a class="link" href="https://matt-godfrey.github.io/D3BarChart/" target="_blank">Bar Chart</a></li>
+                        <li><a class="link" href="https://matt-godfrey.github.io/D3ScatterPlot/" target="_blank">Scatter Plot</a></li>
+                    </ul>
+                </div>
+                <div id="js-projects" class="list">
+                    <h4>JavaScript</h4>
+                    <ul>
+                        <li><a class="link" href="https://matt-godfrey.github.io/JavaScriptCalculator/" target="_blank">Calculator</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- <h2>Academic</h2> -->
+        <div id="school-container">
+
+        </div>
+        
+        <script src="js/projects.js" ></script>
+    </body>
+</html>

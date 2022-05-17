@@ -1,0 +1,36 @@
+#main {
+    width: 400px;
+    height: 200px;
+    /* border: 1px solid black; */
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.header {
+    /* border: 1px solid black; */
+    padding: 10px;
+    height: 100px;
+    background-color: #A9CCE3;
+    /* width: fit-content; */
+    /* margin: 10px; */
+    color: black;
+}
+.banner {
+    height: 20px;
+    /* border: 1px solid black; */
+    background-color: #7FB3D5;
+}
+a {
+    margin: 0 15px 0 15px;
+    text-decoration: none;
+    color: black;
+}
+.nav {
+    float: right;
+    font-family: 'Acme', sans-serif;
+}
+
+h3 {
+    text-align: center;
+}

@@ -1,0 +1,92 @@
+
+
+.header {
+    /* border: 1px solid black; */
+    padding: 10px;
+    height: 100px;
+    background-color: #A9CCE3;
+    /* width: fit-content; */
+    /* margin: 10px; */
+    color: black;
+}
+.banner {
+    height: 20px;
+    /* border: 1px solid black; */
+    background-color: #7FB3D5;
+}
+a {
+    margin: 0 15px 0 15px;
+    text-decoration: none;
+    color: black;
+}
+.nav {
+    float: right;
+    font-family: 'Acme', sans-serif;
+}
+
+#description {
+    font-family: 'Architects Daughter', cursive;
+}
+
+#intro_1 {
+    color: black;
+    text-align: center;
+}
+#intro_2 {
+    color: black;
+    text-align: center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 24px;
+}
+
+#right-text {
+    text-align: center;
+    margin: 10px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+}
+
+#left-container {
+    position: relative;
+    width: 60%;
+    height: 100%;
+    /* border: 1px solid black; */
+}
+
+#description {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#quote-container {
+    width: 300px;
+    /* height: 200px; */
+    box-shadow: 10px 5px 5px rgb(43, 43, 44);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+#right-container {
+    height: 500px;
+    width: 350px;
+    margin: 20px;
+    margin-top: 0;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+#profile-pic {
+    /* border-radius: 52%; */
+    border: 1px solid black;
+    width: 50%;
+    height: 50%;
+    margin-top: 20px;
+}
+
+
+
