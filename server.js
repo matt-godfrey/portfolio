@@ -35,7 +35,7 @@ app.use(express.urlencoded({extended: true})); // parses form data
 // 	mongoUrl: process.env.MONGO_URI,
 // 	collection: "sessions"
 // })
-store.on("error", (err) => { console.log(err) })
+// store.on("error", (err) => { console.log(err) })
 
 app.use(session({
 	name: "userSession",
