@@ -180,7 +180,7 @@ function logout(req, res, next) {
 
 //Connect to database
 
-mc.connect(process.env.MONGO_URI, function(err, client) {
+mc.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, }, function(err, client) {
 	if (err) {
 		console.log("Error in connecting to database");
 		console.log(err);
