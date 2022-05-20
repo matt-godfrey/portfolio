@@ -186,7 +186,7 @@ mc.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: t
 		console.log(err);
 		return;
 	}
-	console.log(process.env.MONGO_URI)
+	
 	//Get the database and save it to a variable
 	db = client.db("portfolio");
     app.locals.db = db;
