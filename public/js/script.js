@@ -8,6 +8,7 @@ let currentSession = {};
 
 
 function init() {
+    console.log(process.env.MONGO_URI);
     authenticate();
 }
 

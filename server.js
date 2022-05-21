@@ -36,13 +36,14 @@ const store = new MongoDBStore({
 	collection: "sessions"
 })
 store.on("error", (err) => { console.log(err) })
-
+app.set('trust proxy', 1);
 app.use(session({
 	name: "userSession",
 	secret: "A very cool secret",
 	// store: store,
 	store: store,
 	resave: true,
+	cookie: {secure: true},
 	saveUninitialized: false
 }))
 
