@@ -19,7 +19,7 @@ function authenticate() {
 				generateHeader();
 			}
             
-            console.log(currentSession);
+            
 		}
 	}
 	// req.open("GET", `http://localhost:3000/authenticate`);

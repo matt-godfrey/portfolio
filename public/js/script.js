@@ -1,5 +1,4 @@
-const dotenv = require("../dotenv");
-dotenv.config();
+
 const url = "https://zenquotes.io/api/quotes/";
 let quotes = [];
 let container = document.getElementById("quote-container");
@@ -8,7 +7,7 @@ let currentSession = {};
 
 
 function init() {
-    console.log(process.env.MONGO_URI);
+    
     authenticate();
 }
 
