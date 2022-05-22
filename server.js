@@ -78,6 +78,10 @@ function checkPasswords(req, res, next) {
 	// 	return;
 	// }
 
+	if (!pass1 || !pass2) {
+		return;
+	}
+
 	if (pass1 !== pass2) {
 		res.render("register", {
 			error: "Passwords do not match"
