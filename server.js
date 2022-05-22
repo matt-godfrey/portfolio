@@ -78,9 +78,9 @@ function checkPasswords(req, res, next) {
 	// 	return;
 	// }
 
-	if (!pass1 || !pass2) {
-		return;
-	}
+	// if (!pass1 || !pass2) {
+	// 	return;
+	// }
 
 	if (pass1 !== pass2) {
 		res.render("register", {
@@ -97,7 +97,9 @@ function checkPasswords(req, res, next) {
 // creates a user if the username doesn't already exist
 // logs the user in to their account
 function createUser(req, res, next) {
-	
+	if (!req.body.username) {
+		return;
+	}
 	db.collection("users").findOne({username: req.body.username}, function(err, user) {
 		if (err) throw err;
 		if (!err && user) {
