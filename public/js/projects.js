@@ -14,7 +14,7 @@ function authenticate() {
 	req.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			currentSession = JSON.parse(req.responseText);
-			console.log(currentSession);
+			
 			if (currentSession.loggedin) {
 				generateHeader();
 			}
