@@ -171,6 +171,7 @@ function authenticate(req, res, next) {
 
 // sends session info to the client
 function validateSession(req, res) {
+	// console.log(req.session);
 	res.set("Content-Type", "application/json");
 	res.status(200).send(JSON.stringify(req.session));
 }
