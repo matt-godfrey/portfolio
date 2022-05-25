@@ -4,20 +4,13 @@ const session = require('express-session');
 const pug = require("pug");
 const dotenv = require("dotenv");
 dotenv.config();
-// var cors = require('cors')
+
 MongoDBStore = require("connect-mongo");
 const mc = require("mongodb").MongoClient;
 let app = express();
 let db;
 app.locals.db = {};
-// const cors = require('cors');
-// const corsOptions ={
-//     origin:'http://localhost:3000', 
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
-// app.use(cors());
+
 
 
 app.set("views", path.join(__dirname, "views")); // set views folder
@@ -31,7 +24,6 @@ app.use(express.json()); // parse JSON in request
 app.use(express.urlencoded({extended: true})); // parses form data
 
 const store = new MongoDBStore({
-	// mongoUrl: "mongodb://localhost/portfolio",
 	mongoUrl: process.env.MONGO_URI,
 	collection: "sessions"
 })
@@ -40,7 +32,6 @@ app.set('trust proxy', 1);
 app.use(session({
 	name: "userSession",
 	secret: "A very cool secret",
-	// store: store,
 	store: store,
 	resave: true,
 	cookie: {secure: true},
@@ -71,12 +62,12 @@ function checkPasswords(req, res, next) {
 
 	const regex = new RegExp("\s+", "g");
 
-	// if (regex.test(pass1)) {
-	// 	res.render("register", {
-	// 		error: "Please enter a valid password (no spaces)"
-	// 	})
-	// 	return;
-	// }
+	if (regex.test(pass1)) {
+		res.render("register", {
+			error: "Please enter a valid password (no spaces)"
+		})
+		return;
+	}
 
 	// if (!pass1 || !pass2) {
 	// 	return;
@@ -202,5 +193,5 @@ mc.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: t
 	
 	//Only start listening now, when we know the database is available
 	app.listen(process.env.PORT || 3000);
-    console.log("Server listening on port 3000");
+    console.log(`Server listening on port ${process.env.PORT}`);
 })

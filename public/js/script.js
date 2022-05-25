@@ -1,5 +1,5 @@
 
-const url = "https://zenquotes.io/api/quotes/";
+const url = "https://matt-godfrey-quotes.herokuapp.com/api/quotes"
 let quotes = [];
 let container = document.getElementById("quote-container");
 let nav = document.getElementById("nav-bar");
@@ -28,7 +28,7 @@ function authenticate() {
             
 		}
 	}
-	// req.open("GET", `http://localhost:3000/authenticate`);
+	
 	req.open("GET", `https://matt-godfrey-portfolio.herokuapp.com/authenticate`);
 	req.setRequestHeader("Accept", "application/json");
 	req.send();
@@ -62,7 +62,7 @@ function randomNum(max) {
 
 function getQuotes() {
     let req = new XMLHttpRequest();
-    // req.withCredentials = true;
+    
     req.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             let response = JSON.parse(req.responseText);
