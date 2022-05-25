@@ -70,7 +70,7 @@ function getQuotes() {
             pos = Math.trunc(pos);
            
             let newQuote = document.createElement("p");
-            newQuote.innerHTML = response[0].h;
+            newQuote.innerHTML = response[pos].h;
             container.appendChild(newQuote);
         }
     }
