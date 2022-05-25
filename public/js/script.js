@@ -68,9 +68,13 @@ function getQuotes() {
             let response = JSON.parse(req.responseText);
             let pos = randomNum(response.length);
             pos = Math.trunc(pos);
-           
+            let str = response[pos].h
+            let author = response[pos].a;
+            let footerElement = str.match(/<footer>(.*?)<\/footer>/g);
+            let boldQuote = str.replace(footerElement, "<footer><b>"+author+"</b></footer>");
             let newQuote = document.createElement("p");
-            newQuote.innerHTML = response[pos].h;
+            
+            newQuote.innerHTML = boldQuote;
             container.appendChild(newQuote);
         }
     }
