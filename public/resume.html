@@ -5,9 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/resume.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/contact.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
     <title>Resume</title>
 </head>
-<body>
+<body onload="init()">
+    <div id="nav-bar" class="header">
+        <a href="../register" id="register" class="nav">Register</a>
+        <a href="../login" id="login" class="nav">Login</a>
+        <a href="resume.html"class="nav">Resume</a>
+        <a href="contact.html" class="nav">Contact</a>
+        <a href="projects.html" class="nav" >Projects</a>
+        <a href="/" class="nav">Home</a>
+    </div>
     <h3>Matt Godfrey</h3>
     <p class="top-center">350 Fifth Avenue, Unit 1</p>
     <p class="top-center">Ottawa, Ontario, K1S 2N8</p>
@@ -94,6 +107,6 @@
             <li>Utilized strong interpersonal communication skills by socializing with customers and offering a comfortable and enjoyable experience in the cafe</li>
         </ul>
     </div>
-    
+    <script src="js/contact.js"></script>
 </body>
 </html>

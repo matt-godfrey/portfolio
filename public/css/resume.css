@@ -1,3 +1,23 @@
+
+.header {
+    padding: 10px;
+    height: 100px;
+    background-color: #A9CCE3;
+    color: black;
+}
+.banner {
+    height: 20px;
+    background-color: #7FB3D5;
+}
+
+.nav {
+    float: right;
+    font-family: 'Acme', sans-serif;
+    margin: 0 15px 0 15px;
+    text-decoration: none;
+    color: black;
+}
+
 h3 {
     text-align: center;
 }
