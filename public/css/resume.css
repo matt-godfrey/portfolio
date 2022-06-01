@@ -1,0 +1,61 @@
+h3 {
+    text-align: center;
+}
+
+.top-center {
+    text-align: center;
+    margin-bottom: -12px;
+}
+
+#education {
+    margin-left: 25px;
+}
+
+#availibility {
+    margin-left: 25px;
+}
+
+#skills {
+    margin-left: 25px;
+}
+
+#projects {
+    margin-left: 25px;
+}
+
+#experience {
+    width: 1000px;
+    border: solid black 1px;
+    margin-left: 25px;
+    padding: 10px;
+}
+
+
+.date {
+    display: inline-block;
+}
+
+.first {
+    position: relative;
+    left: 400px;
+}
+
+.second {
+    position: relative;
+    left: 560px;
+}
+
+.third {
+    position: relative;
+    left: 500px;
+}
+
+.work-heading {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: -12px;
+}
+
+.project-role {
+    margin-bottom: -12px;
+}
