@@ -7,7 +7,7 @@ confirmPassInput.addEventListener("keyup", areEqual);
 
 function isValid() {
     let text = passInput.value;
-    let pattern = new RegExp("[-?+=%\/\\'!#$^:(){}]");
+    let pattern = new RegExp("[-?+=@%\/\\'!#$^:(){}]");
     if (pattern.test(text) && text.length >= 6) {
         passInput.style.border = "2px solid green";
         passInput.style.borderRadius = "5px";
@@ -23,7 +23,7 @@ function areEqual() {
     let text1 = passInput.value;
     let text2 = confirmPassInput.value;
 
-    if (text1 === text2) {
+    if (text1 === text2 && (text1 != "" && text2 != "")) {
         confirmPassInput.style.border = "2px solid green";
         confirmPassInput.style.borderRadius = "5px";
         confirmPassInput.style.outline = "none";

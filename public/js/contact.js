@@ -38,8 +38,8 @@ function generateHeader() {
     login.innerHTML = "Logout";
 
 	let text = document.createElement("p");
-	
-	text.innerHTML = "Hello, " + currentSession.username + "!";
+	text.setAttribute("id", "user-greeting");
+	text.innerHTML = "Hello, <b>" + currentSession.username + "!</b>";
 	text.style.display = "inline";
 	header.appendChild(text);
 	

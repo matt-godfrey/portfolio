@@ -3,6 +3,8 @@ const path = require("path");
 const session = require('express-session');
 const pug = require("pug");
 const dotenv = require("dotenv");
+const { text } = require('express');
+const { response } = require('express');
 dotenv.config();
 
 MongoDBStore = require("connect-mongo");
@@ -56,9 +58,27 @@ function sendLogin(req, res, next) {
     res.render("login");
 }
 
+function isValid(password) {
+	let pattern = new RegExp("[-?+=@%\/\\'!#$^:(){}]", "g");
+	
+	if (pattern.test(password) && password.length >= 6) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 function checkPasswords(req, res, next) {
 	let pass1 = req.body.password.trim();
 	let pass2 = req.body.confirmPassword.trim();
+
+	if (!isValid(pass1)) {
+		res.render("register", {
+			error: "Please enter a password that contains at least 6 characters and at least 1 special character (eg. !,%,@,^,-,(,,[,{,),},],#,$)"
+		})
+		return;
+	}
 
 	const regex = new RegExp("\s+", "g");
 
@@ -68,10 +88,6 @@ function checkPasswords(req, res, next) {
 		})
 		return;
 	}
-
-	// if (!pass1 || !pass2) {
-	// 	return;
-	// }
 
 	if (pass1 !== pass2) {
 		res.render("register", {
@@ -88,9 +104,7 @@ function checkPasswords(req, res, next) {
 // creates a user if the username doesn't already exist
 // logs the user in to their account
 function createUser(req, res, next) {
-	// if (!req.body.username) {
-	// 	return;
-	// }
+	
 	db.collection("users").findOne({username: req.body.username}, function(err, user) {
 		if (err) throw err;
 		if (!err && user) {
@@ -134,7 +148,7 @@ function authenticate(req, res, next) {
 	if (req.session.loggedin) {
 		res.render("loginError");
 	}
-	// console.log(req)
+	
 	db.collection("users").findOne({username: req.body.username}, function(err, user) {
 		if (err) throw err;
 		// log in the user if username found in database and
@@ -162,7 +176,7 @@ function authenticate(req, res, next) {
 
 // sends session info to the client
 function validateSession(req, res) {
-	// console.log(req.session);
+	
 	res.set("Content-Type", "application/json");
 	res.status(200).send(JSON.stringify(req.session));
 }
